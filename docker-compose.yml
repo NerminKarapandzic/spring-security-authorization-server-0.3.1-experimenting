@@ -1,0 +1,12 @@
+server-db:
+  image: mariadb:10.3
+  container_name: server-db
+  volumes:
+    - ./db/core/data/:/var/lib/mysql/data
+  environment:
+    - MYSQL_DATABASE=auth_db
+    - MYSQL_USER=server_user_2779w1939
+    - MYSQL_PASSWORD=ArrRf5acUjRRKpQTCfbv
+    - MYSQL_ROOT_PASSWORD=ArrRf5acUjRRKpQTCfbv
+  ports:
+    - "3306:3306"

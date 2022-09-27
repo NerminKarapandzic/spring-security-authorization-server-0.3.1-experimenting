@@ -1,0 +1,32 @@
+flyway-password: ArrRf5acUjRRKpQTCfbv
+flyway-user: root
+app-user: root
+db-url: jdbc:mariadb://localhost:3306/auth_db
+app-password: ArrRf5acUjRRKpQTCfbv
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+spring:
+  application:
+    name: security_template
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      ddl-auto: create
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  datasource:
+    password: ${app-password}
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ${app-user}
+    hikari:
+      maxLifeTime: '600000'
+    url: ${db-url}
