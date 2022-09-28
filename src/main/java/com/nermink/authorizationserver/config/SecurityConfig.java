@@ -26,9 +26,10 @@ public class SecurityConfig {
     http
         .authorizeRequests()
         .antMatchers("/users/**").permitAll()
+        .antMatchers("/clients/**").permitAll()
         .anyRequest().authenticated()
         .and()
-        .csrf().ignoringAntMatchers("/users/**")
+        .csrf().ignoringAntMatchers("/users/**", "/clients/**")
         .and()
         .formLogin(Customizer.withDefaults());
 
